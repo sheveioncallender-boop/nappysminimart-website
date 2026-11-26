@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="settings_nappys" model="ir.ui.view">
+  <field name="name">Nappy’s Minimart website settings</field><field name="model">res.config.settings</field>
+  <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+  <field name="arch" type="xml"><xpath expr="//app[@name='website']" position="inside">
+   <block title="Nappy’s Minimart" name="nappys_settings">
+    <setting string="Nappy’s Minimart storefront" help="Enable Nappy’s Minimart website styling on the selected website. Backend brand colours apply throughout this database while the module is installed."><field name="nappys_brand_enabled"/></setting>
+    <setting string="Telephone and WhatsApp"><label for="nappys_phone"/><field name="nappys_phone"/><label for="nappys_whatsapp"/><field name="nappys_whatsapp" placeholder="18684888332"/></setting>
+    <setting string="Store location" help="Used for the contact details and Google Maps directions."><field name="nappys_address"/></setting>
+    <setting string="Opening hours" help="Leave blank until hours are confirmed."><field name="nappys_hours" placeholder="Enter confirmed opening hours"/></setting>
+   </block>
+  </xpath></field>
+ </record>
+ <record id="product_nappys" model="ir.ui.view">
+  <field name="name">Nappy’s Minimart product feature</field><field name="model">product.template</field>
+  <field name="inherit_id" ref="product.product_template_form_view"/>
+  <field name="arch" type="xml"><xpath expr="//page[@name='sales']" position="inside"><group string="Nappy’s Minimart Website"><field name="nappys_featured"/></group></xpath></field>
+ </record>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="1">
+    <record id="category_pantry" model="product.public.category">
+      <field name="name">Pantry Essentials</field>
+      <field name="sequence">10</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_drinks" model="product.public.category">
+      <field name="name">Drinks &amp; Beverages</field>
+      <field name="sequence">20</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_snacks" model="product.public.category">
+      <field name="name">Snacks &amp; Confectionery</field>
+      <field name="sequence">30</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_chilled" model="product.public.category">
+      <field name="name">Chilled &amp; Dairy</field>
+      <field name="sequence">40</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_frozen" model="product.public.category">
+      <field name="name">Frozen Foods</field>
+      <field name="sequence">50</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_household" model="product.public.category">
+      <field name="name">Household &amp; Cleaning</field>
+      <field name="sequence">60</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_personal" model="product.public.category">
+      <field name="name">Personal Care</field>
+      <field name="sequence">70</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+    <record id="category_baby" model="product.public.category">
+      <field name="name">Baby Essentials</field>
+      <field name="sequence">80</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+  </data>
+</odoo>

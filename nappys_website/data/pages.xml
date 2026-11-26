@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="1">
+    <record id="page_home" model="website.page">
+      <field name="name">Home</field>
+      <field name="url">/nappys-home</field>
+      <field name="type">qweb</field>
+      <field name="key">nappys_website.page_home</field>
+      <field name="website_meta_title">Nappy’s Minimart | Your community minimart in La Romaine</field>
+      <field name="website_meta_description">Your everyday stop in La Romaine. Explore Nappy’s Minimart, browse the shop and get in touch.</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="arch" type="xml">
+        <t t-name="nappys_website.page_home">
+          <t t-call="website.layout">
+            <div id="wrap" class="nm-content oe_structure">
+<section class="nm-hero" data-snippet="s_text_image" data-name="Nappy’s Welcome"><div class="nm-hero-copy"><span class="nm-eyebrow"><i class="fa fa-map-marker" aria-hidden="true"/> LA ROMAINE, TRINIDAD &amp; TOBAGO</span><h1>Small shop.<br/>Big on <em>community.</em></h1><p>For the everyday essentials, the little extras and the familiar faces. Welcome to your neighbourhood minimart.</p><div class="nm-hero-actions"><a href="/shop" class="nm-button">Explore the shop</a><a href="/visit-nappys" class="nm-text-link">Come say hello</a></div><div class="nm-hero-note"><span class="nm-heart" aria-hidden="true">♥</span><span>New name. Same place in your community.<br/><strong>Formerly George Street Mini Mart.</strong></span></div></div><div class="nm-hero-photo"><img src="/nappys_website/static/src/img/grocery-bag.jpg" alt="A reusable grocery bag with everyday food and drinks" width="1600" height="1067" fetchpriority="high"/><div class="nm-hero-tag"><span>A LITTLE CLOSER TO HOME</span><strong>Your local.<br/>Your Nappy’s.</strong></div></div></section>
+<section class="nm-ribbon" data-snippet="s_text_block" data-name="Everyday Essentials"><div class="nm-container"><span><i class="fa fa-shopping-basket" aria-hidden="true"/> Everyday essentials</span><span><i class="fa fa-heart-o" aria-hidden="true"/> Community at heart</span><span><i class="fa fa-map-marker" aria-hidden="true"/> La Romaine</span></div></section>
+<t t-call="nappys_website.departments"/><t t-call="nappys_website.featured_products"/>
+<section class="nm-section nm-community" data-snippet="s_text_image" data-name="Our Community"><div class="nm-container nm-story-grid"><div class="nm-story-mark"><img src="/nappys_website/static/src/img/nappys-logo.png" alt="Nappy’s Minimart, La Romaine" width="1254" height="1254" loading="lazy"/></div><div class="nm-story-copy"><span class="nm-eyebrow">A FAMILIAR PLACE. A FRESH NEW NAME.</span><h2>More than a stop.<br/><em>Part of the neighbourhood.</em></h2><p>You may know us as George Street Mini Mart. Today, we’re Nappy’s Minimart — carrying that community spirit forward in La Romaine.</p><p>Whether it’s something for the kitchen or a quick stop on your way home, we’re happy to see you.</p><a href="/about-nappys" class="nm-text-link">Meet Nappy’s</a></div></div></section><t t-call="nappys_website.visit_banner"/></div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_departments" model="website.page">
+      <field name="name">Departments</field>
+      <field name="url">/departments</field>
+      <field name="type">qweb</field>
+      <field name="key">nappys_website.page_departments</field>
+      <field name="website_meta_title">Our Departments | Nappy’s Minimart</field>
+      <field name="website_meta_description">Explore the everyday shopping departments at Nappy’s Minimart, La Romaine.</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="arch" type="xml">
+        <t t-name="nappys_website.page_departments">
+          <t t-call="website.layout">
+            <div id="wrap" class="nm-content oe_structure">
+              <section class="nm-page-intro" data-snippet="s_text_block" data-name="Departments">
+                <div class="nm-container">
+                  <span class="nm-eyebrow">YOUR EVERYDAY SHOPPING LIST</span>
+                  <h1>A little of <em>everything.</em></h1>
+                  <p>Explore our departments and browse the current online selection.</p>
+                </div>
+              </section>
+              <section class="nm-section">
+                <div class="nm-container">
+                  <div class="nm-category-grid">
+                    <a t-att-href="website._nappys_category_url('category_pantry')" class="nm-category-tile">
+                      <i class="fa fa-cutlery" aria-hidden="true"/>
+                      <h2>Pantry Essentials</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_drinks')" class="nm-category-tile">
+                      <i class="fa fa-glass" aria-hidden="true"/>
+                      <h2>Drinks &amp; Beverages</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_snacks')" class="nm-category-tile">
+                      <i class="fa fa-star-o" aria-hidden="true"/>
+                      <h2>Snacks &amp; Confectionery</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_chilled')" class="nm-category-tile">
+                      <i class="fa fa-snowflake-o" aria-hidden="true"/>
+                      <h2>Chilled &amp; Dairy</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_frozen')" class="nm-category-tile">
+                      <i class="fa fa-snowflake-o" aria-hidden="true"/>
+                      <h2>Frozen Foods</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_household')" class="nm-category-tile">
+                      <i class="fa fa-home" aria-hidden="true"/>
+                      <h2>Household &amp; Cleaning</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_personal')" class="nm-category-tile">
+                      <i class="fa fa-heart-o" aria-hidden="true"/>
+                      <h2>Personal Care</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                    <a t-att-href="website._nappys_category_url('category_baby')" class="nm-category-tile">
+                      <i class="fa fa-smile-o" aria-hidden="true"/>
+                      <h2>Baby Essentials</h2>
+                      <span>Browse the shop</span>
+                    </a>
+                  </div>
+                  <p class="nm-help-text">Looking for something specific? Contact us to check availability.</p>
+                  <a t-if="website._nappys_whatsapp_url()" t-att-href="website._nappys_whatsapp_url()" class="nm-button" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a>
+                </div>
+              </section>
+              <t t-call="nappys_website.visit_banner"/>
+            </div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_about" model="website.page">
+      <field name="name">Our Community</field>
+      <field name="url">/about-nappys</field>
+      <field name="type">qweb</field>
+      <field name="key">nappys_website.page_about</field>
+      <field name="website_meta_title">Our Community | Nappy’s Minimart, La Romaine</field>
+      <field name="website_meta_description">George Street Mini Mart has a new name: Nappy’s Minimart. Your community minimart in La Romaine.</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="arch" type="xml">
+        <t t-name="nappys_website.page_about">
+          <t t-call="website.layout">
+            <div id="wrap" class="nm-content oe_structure">
+              <section class="nm-page-intro" data-snippet="s_text_block" data-name="Our Story">
+                <div class="nm-container">
+                  <span class="nm-eyebrow">HELLO, WE’RE NAPPY’S</span>
+                  <h1>A new name.<br/><em>The same neighbourhood spirit.</em></h1>
+                  <p>From George Street Mini Mart to Nappy’s Minimart — right here in La Romaine.</p>
+                </div>
+              </section>
+              <section class="nm-section" data-snippet="s_text_image" data-name="About Nappy’s">
+                <div class="nm-container nm-story-grid">
+                  <div class="nm-story-mark">
+                    <img src="/nappys_website/static/src/img/nappys-logo.png" alt="Nappy’s Minimart red and gold community shop logo" width="1254" height="1254" loading="lazy"/>
+                  </div>
+                  <div class="nm-story-copy">
+                    <span class="nm-eyebrow">COMMUNITY AT HEART</span>
+                    <h2>Everyday shopping.<br/><em>A personal welcome.</em></h2>
+                    <p>A community minimart is part of everyday life. It’s where you stop for something you need, pick up a little treat and say hello along the way.</p>
+                    <p>That’s the spirit behind Nappy’s Minimart. Our new name and red-and-gold look mark a fresh chapter for the shop you knew as George Street Mini Mart.</p>
+                    <a href="/shop" class="nm-button">Explore the shop</a>
+                  </div>
+                </div>
+              </section>
+              <t t-call="nappys_website.visit_banner"/>
+            </div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_contact" model="website.page">
+      <field name="name">Visit Us</field>
+      <field name="url">/visit-nappys</field>
+      <field name="type">qweb</field>
+      <field name="key">nappys_website.page_contact</field>
+      <field name="website_meta_title">Visit &amp; Contact | Nappy’s Minimart, La Romaine</field>
+      <field name="website_meta_description">Visit Nappy’s Minimart in La Romaine, Trinidad and Tobago. Call or WhatsApp +1 868 488-8332.</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="arch" type="xml">
+        <t t-name="nappys_website.page_contact">
+          <t t-call="website.layout">
+            <div id="wrap" class="nm-content oe_structure">
+              <section class="nm-page-intro" data-snippet="s_text_block" data-name="Visit Nappy’s">
+                <div class="nm-container">
+                  <span class="nm-eyebrow">COME SAY HELLO</span>
+                  <h1>Your local.<br/><em>Just a little closer.</em></h1>
+                  <p>Find Nappy’s Minimart in La Romaine, Trinidad and Tobago.</p>
+                </div>
+              </section>
+              <section class="nm-section" data-snippet="s_text_block" data-name="Contact Details">
+                <div class="nm-container nm-contact-grid">
+                  <div class="nm-contact-info">
+                    <div class="nm-contact-block">
+                      <span class="nm-eyebrow">OUR COMMUNITY</span>
+                      <h2>Nappy’s Minimart</h2>
+                      <p class="nm-address" t-out="website.nappys_address"/>
+                      <a t-att-href="website._nappys_directions_url()" class="nm-button" target="_blank" rel="noopener noreferrer">Open location in Maps</a>
+                    </div>
+                    <div class="nm-contact-block">
+                      <span class="nm-eyebrow">LET’S TALK</span>
+                      <t t-call="nappys_website.phone_link"/>
+                      <p>Checking an item or planning a visit? We’re a call or message away.</p>
+                      <a t-if="website._nappys_whatsapp_url()" t-att-href="website._nappys_whatsapp_url()" class="nm-text-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp" aria-hidden="true"/> Message us on WhatsApp</a>
+                    </div>
+                    <div class="nm-contact-block">
+                      <span class="nm-eyebrow">OPENING HOURS</span>
+                      <p t-if="website.nappys_hours" class="nm-address" t-out="website.nappys_hours"/>
+                      <p t-else="">Call or WhatsApp us for current opening hours.</p>
+                    </div>
+                  </div>
+                  <div class="nm-map-wrap">
+                    <iframe t-att-src="website._nappys_map_url()" title="La Romaine, Trinidad and Tobago" width="800" height="600" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="allowfullscreen"/>
+                    <div class="nm-map-caption"><i class="fa fa-map-marker" aria-hidden="true"/> La Romaine · Trinidad and Tobago</div>
+                  </div>
+                </div>
+              </section>
+              <section class="nm-section nm-faq" data-snippet="s_text_block" data-name="Helpful Answers">
+                <div class="nm-container">
+                  <span class="nm-eyebrow">BEFORE YOU POP IN</span>
+                  <h2>A few helpful <em>answers.</em></h2>
+                  <details>
+                    <summary>Is this the former George Street Mini Mart?</summary>
+                    <p>Yes. The shop is now called Nappy’s Minimart, serving the La Romaine community.</p>
+                  </details>
+                  <details>
+                    <summary>How do I check if an item is available?</summary>
+                    <p>Browse the online shop or call and WhatsApp us to ask about a specific item.</p>
+                  </details>
+                  <details>
+                    <summary>Where can I find the shop?</summary>
+                    <p>We’re in La Romaine, Trinidad and Tobago. Call or message us for the exact directions before your first visit.</p>
+                  </details>
+                </div>
+              </section>
+            </div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="redirect_contact" model="website.rewrite">
+      <field name="name">Nappy’s contact page</field>
+      <field name="url_from">/contactus</field>
+      <field name="url_to">/visit-nappys</field>
+      <field name="redirect_type">302</field>
+      <field name="website_id" ref="website.default_website"/>
+    </record>
+  </data>
+</odoo>

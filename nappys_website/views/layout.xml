@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+ <template id="phone_link" name="Nappy’s Minimart phone"><a t-if="website.nappys_phone" t-att-href="website._nappys_phone_url()" class="nm-phone"><i class="fa fa-phone" aria-hidden="true"/><span t-out="website.nappys_phone"/></a></template>
+ <template id="topbar" name="Nappy’s announcement"><div t-if="website.nappys_brand_enabled" class="nm-topbar"><div class="nm-container"><a href="/visit-nappys"><i class="fa fa-map-marker" aria-hidden="true"/> Your community minimart · La Romaine</a><t t-call="nappys_website.phone_link"/></div></div></template><template id="footer" name="Nappy’s footer"><div class="nm-footer"><div class="nm-container nm-footer-grid"><div class="nm-footer-brand"><a href="/" aria-label="Nappy’s Minimart home"><img src="/nappys_website/static/src/img/nappys-logo.png" alt="Nappy’s Minimart — La Romaine" width="1254" height="1254" loading="lazy"/></a><p>Everyday essentials.<br/>A familiar face. Right here in La Romaine.</p></div><div><h2>Explore</h2><a href="/shop">Shop all products</a><a href="/departments">Our departments</a><a href="/about-nappys">Our community</a><a href="/my/home">My account</a></div><div><h2>Everyday shopping</h2><a t-att-href="website._nappys_category_url('category_pantry')">Pantry essentials</a><a t-att-href="website._nappys_category_url('category_drinks')">Drinks</a><a t-att-href="website._nappys_category_url('category_snacks')">Snacks and treats</a><a t-att-href="website._nappys_category_url('category_household')">Household essentials</a></div><div><h2>Come say hello</h2><p class="nm-address" t-out="website.nappys_address"/><t t-call="nappys_website.phone_link"/><a t-if="website._nappys_whatsapp_url()" t-att-href="website._nappys_whatsapp_url()" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a><p t-if="website.nappys_hours" class="nm-address" t-out="website.nappys_hours"/><a href="/visit-nappys">Plan your visit</a></div></div><div class="nm-container nm-footer-bottom"><span>Nappy’s Minimart · La Romaine</span><a href="https://spxcorp.net" target="_blank" rel="noopener noreferrer">Developed by Spxcorp Limited.</a></div></div></template><template id="layout_brand" inherit_id="website.layout" priority="99" name="Nappy’s Minimart storefront branding">
+  <xpath expr="//div[@id='wrapwrap']" position="attributes"><attribute name="t-attf-class" add="#{'nappys-site' if website.nappys_brand_enabled else ''}" separator=" "/></xpath>
+  <xpath expr="//header/*[1]" position="before"><t t-call="nappys_website.topbar"/></xpath>
+  <xpath expr="//footer[@id='bottom']" position="inside"><t t-if="website.nappys_brand_enabled and not no_footer" t-call="nappys_website.footer"/></xpath>
+  <xpath expr="//div[@id='wrapwrap']" position="inside"><a t-if="website.nappys_brand_enabled and website._nappys_whatsapp_url()" t-att-href="website._nappys_whatsapp_url()" class="nm-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Nappy’s Minimart on WhatsApp"><i class="fa fa-whatsapp" aria-hidden="true"/></a></xpath>
+ </template>
+<template id="nappys_header_order" inherit_id="website_sale.template_header_default" priority="60" name="Nappy’s Minimart native header order">
+    <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="attributes"><attribute name="t-if">not website.nappys_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='website.placeholder_header_call_to_action']" position="attributes"><attribute name="t-if">not website.nappys_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='portal.user_dropdown']" position="attributes">
+      <attribute name="_user_name">not website.nappys_brand_enabled</attribute>
+      <attribute name="_icon">website.nappys_brand_enabled</attribute>
+      <attribute name="_link_class.f"/>
+      <attribute name="_link_class">'o_navlink_background btn rounded-circle position-relative text-reset' if website.nappys_brand_enabled else ((_additional_btn_color or 'nav-link') + ' border-0')</attribute>
+    </xpath>
+    <xpath expr="//t[@t-call='website_sale.header_cart_link']" position="attributes"><attribute name="t-if">not website.nappys_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='portal.user_dropdown']" position="after">
+      <t t-if="website.nappys_brand_enabled" t-call="website_sale.header_cart_link" _icon="True" _text="False" _item_class.f="o_no_autohide_item" _link_class.f="o_navlink_background btn rounded-circle position-relative text-reset" _badge_class.f="position-absolute top-0 end-0"/>
+    </xpath>
+  </template>
+
+ <template id="mobile_contact" inherit_id="website.template_header_mobile" name="Nappy’s Minimart mobile contact">
+  <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="before"><li t-if="website.nappys_brand_enabled" class="nm-mobile-contact"><t t-call="nappys_website.phone_link"/><a href="/visit-nappys">Visit us in La Romaine</a></li></xpath>
+  <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="attributes"><attribute name="t-if">not website.nappys_brand_enabled</attribute></xpath>
+  <xpath expr="//t[@t-call='website.header_call_to_action_large']" position="attributes"><attribute name="t-if">not website.nappys_brand_enabled</attribute></xpath>
+ </template>
+</odoo>
