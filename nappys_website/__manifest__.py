@@ -1,6 +1,6 @@
 {
     'name': 'Nappy’s Minimart — Website & Shop',
-    'version': '19.0.1.0.4',
+    'version': '19.0.1.1.0',
     'summary': 'Community minimart website, live Odoo shop and red-and-gold branding',
     'category': 'Website/eCommerce',
     'author': 'Spxcorp Limited',
@@ -12,6 +12,11 @@
         'data/categories.xml', 'data/pages.xml', 'views/pos_display.xml',
     ],
     'assets': {
+        'point_of_sale._assets_pos': [
+            'nappys_website/static/src/pos/drawer_bridge.js',
+            'nappys_website/static/src/pos/drawer.js',
+            'nappys_website/static/src/pos/drawer.xml',
+        ],
         'web._assets_primary_variables': [
             ('prepend', 'nappys_website/static/src/css/brand_variables.scss'),
         ],

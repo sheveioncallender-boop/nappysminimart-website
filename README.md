@@ -89,3 +89,9 @@ The 48 mm receipt box includes 1.5 mm of inner padding on each side and 1 mm abo
 ### Receipt footer — 19.0.1.0.4
 
 Hide the telephone line and Powered by Odoo on POS receipts only. Company contact data, the logo, location and approved 58 mm spacing remain unchanged.
+
+## USB drawer button — 19.0.1.1.0
+
+Adds **Open Drawer** to the native POS header and **Drawer setup** to the menu. Uses QZ Tray on the Windows till to send a raw ESC/POS drawer pulse to the selected USB printer without creating a sale or printing a receipt. QZ's normal permission prompts remain enabled. The approved receipt layout is unchanged.
+
+Pull and upgrade `nappys_website`, then follow [USB drawer setup](docs/USB-DRAWER-SETUP.md). The physical drawer must be tested at the till; the cloud browser cannot reach its USB hardware. Run adapter checks with `node --test scripts/test_drawer.mjs`.

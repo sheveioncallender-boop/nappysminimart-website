@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="nappys_website.NavbarDrawer" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
+        <xpath expr="//CashierName" position="before">
+            <button t-if="pos.cashier._role != 'minimal'" class="btn btn-light btn-lg lh-lg text-nowrap" t-on-click="nappysOpenDrawer" t-att-disabled="nappysDrawer.busy" title="Open Drawer" aria-label="Open Drawer">
+                <i t-att-class="nappysDrawer.busy ? 'fa fa-spinner fa-spin' : 'fa fa-archive'"/>
+                <span t-if="!ui.isSmall" class="ms-2">Open Drawer</span>
+            </button>
+        </xpath>
+        <xpath expr="//div[hasclass('pos-burger-menu-items')]/DropdownItem[1]" position="before">
+            <DropdownItem t-if="pos.cashier._role != 'minimal'" onSelected="() => this.nappysDrawerSetup()">Drawer setup</DropdownItem>
+        </xpath>
+    </t>
+    <t t-name="nappys_website.DrawerSetup">
+        <Dialog title="'Drawer setup — this till'" size="'md'">
+            <p>Keep QZ Tray running on this computer, then connect and select your USB Xprinter.</p>
+            <p class="text-muted">QZ may ask permission to connect or send a drawer command. This setup keeps those prompts enabled.</p>
+            <button class="btn btn-secondary mb-3" t-on-click="findPrinters" t-att-disabled="state.busy">
+                <t t-if="state.busy">Connecting…</t><t t-else="">Connect and find printers</t>
+            </button>
+            <div t-if="state.error" class="alert alert-warning" role="alert" t-esc="state.error"/>
+            <div class="mb-3">
+                <label for="nappys-drawer-printer" class="form-label">Receipt printer</label>
+                <select id="nappys-drawer-printer" class="form-select" t-model="state.printer" t-att-disabled="!state.connected || state.busy">
+                    <option value="">Select the Xprinter</option>
+                    <option t-foreach="state.printers" t-as="printer" t-key="printer" t-att-value="printer" t-esc="printer"/>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="nappys-drawer-pin" class="form-label">Drawer connection</label>
+                <select id="nappys-drawer-pin" class="form-select" t-model="state.pin" t-att-disabled="state.busy">
+                    <option value="0">Pin 2 — standard</option>
+                    <option value="1">Pin 5 — alternate</option>
+                </select>
+                <p class="form-text">Start with Pin 2. Use Pin 5 only if the printer accepts the command but the drawer stays closed.</p>
+            </div>
+            <p class="small text-muted mb-0">Saving does not open the drawer. Afterwards, press Open Drawer in the POS header. No sale or receipt is created.</p>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="save" t-att-disabled="state.busy || !state.connected || !state.printer">Save printer</button>
+                <button class="btn btn-secondary" t-on-click="props.close">Cancel</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
