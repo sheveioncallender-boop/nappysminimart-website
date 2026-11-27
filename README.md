@@ -85,3 +85,7 @@ At the till, select the Xprinter driver, 58 mm roll paper, 100% scale, no browse
 ### Receipt edge spacing — 19.0.1.0.3
 
 The 48 mm receipt box includes 1.5 mm of inner padding on each side and 1 mm above/below, keeping quantities and totals away from the printable edge. Use Chrome custom scale 100%, margins None. A driver form such as 58(48) mm × 210 mm sets a fixed 210 mm sheet length; choose a suitable shorter/roll form in the driver if available to reduce blank feed.
+
+### Receipt footer — 19.0.1.0.4
+
+Hide the telephone line and Powered by Odoo on POS receipts only. Company contact data, the logo, location and approved 58 mm spacing remain unchanged.

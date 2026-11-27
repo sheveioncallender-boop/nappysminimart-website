@@ -53,6 +53,9 @@
                 }
                 body .pos-receipt .pos-receipt-qr,
                 body .pos-receipt #posqrcode { display: none !important; }
+                /* Hide only the receipt telephone line; retain company contact data. */
+                body .pos-receipt > .d-flex.gap-2 > .text-end > div > div:has(> span[dir="ltr"]),
+                body .pos-receipt .footer-powered-by { display: none !important; }
                 body .pos-receipt .orderline { padding: .4em 0 !important; }
                 body .pos-receipt .orderline .product-name {
                     white-space: normal !important;
