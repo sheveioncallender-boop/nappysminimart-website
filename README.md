@@ -81,3 +81,7 @@ Pull this repository in CloudPepper, upgrade `nappys_website`, and reload the PO
 Nappy’s USB Xprinter XP-58IIL uses a 48 mm printable area on 58 mm paper (manufacturer: https://www.xprintertech.com/xprinter-58mm-xp-58iil). The POS receipt preview and browser print layout use this width, a centered company logo, wrapping product names, aligned amounts and compact contact details. Receipt QR blocks are hidden; also disable **Self-service invoicing** in POS settings. The company logo is the native receipt logo.
 
 At the till, select the Xprinter driver, 58 mm roll paper, 100% scale, no browser margins, and headers/footers off. This does not install a driver or change Windows printer preferences remotely. Keep native browser printing for the USB model; no Epson network IP is required. A physical test print is required to confirm driver feed length and hardware margins.
+
+### Receipt edge spacing — 19.0.1.0.3
+
+The 48 mm receipt box includes 1.5 mm of inner padding on each side and 1 mm above/below, keeping quantities and totals away from the printable edge. Use Chrome custom scale 100%, margins None. A driver form such as 58(48) mm × 210 mm sets a fixed 210 mm sheet length; choose a suitable shorter/roll form in the driver if available to reduce blank feed.

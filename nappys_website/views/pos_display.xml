@@ -35,7 +35,7 @@
                     width: 48mm !important;
                     max-width: 48mm !important;
                     box-sizing: border-box;
-                    padding: 0 !important;
+                    padding: 1mm 1.5mm !important;
                     margin: 0 auto;
                     font-family: Arial, sans-serif;
                     font-size: 12px !important;
@@ -109,7 +109,7 @@
                         width: 48mm !important;
                         max-width: 48mm !important;
                         margin: 0 !important;
-                        padding: 0 !important;
+                        padding: 1mm 1.5mm !important;
                         font-size: 12px !important;
                         overflow: visible !important;
                         contain: none !important;
