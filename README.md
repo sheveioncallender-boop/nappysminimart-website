@@ -72,6 +72,12 @@ Code: LGPL-3; see [LICENSE](LICENSE). Brand artwork belongs to the client and is
 
 ## POS product names — 19.0.1.0.1
 
-Product cards wrap to show the complete product name, including colour, size and pack details. This applies to image and image-free cards. The change uses the same Odoo 19 view inheritance as the La Rosa fix and is scoped to the product grid; receipt and order-line layouts retain their native styling.
+Product cards wrap to show the complete product name, including colour, size and pack details. This applies to image and image-free cards. The change uses the same Odoo 19 view inheritance as the La Rosa fix and is scoped to the product grid.
 
 Pull this repository in CloudPepper, upgrade `nappys_website`, and reload the POS browser to receive the change. Point of Sale is now an explicit dependency.
+
+## 58 mm receipts — 19.0.1.0.2
+
+Nappy’s USB Xprinter XP-58IIL uses a 48 mm printable area on 58 mm paper (manufacturer: https://www.xprintertech.com/xprinter-58mm-xp-58iil). The POS receipt preview and browser print layout use this width, a centered company logo, wrapping product names, aligned amounts and compact contact details. Receipt QR blocks are hidden; also disable **Self-service invoicing** in POS settings. The company logo is the native receipt logo.
+
+At the till, select the Xprinter driver, 58 mm roll paper, 100% scale, no browser margins, and headers/footers off. This does not install a driver or change Windows printer preferences remotely. Keep native browser printing for the USB model; no Epson network IP is required. A physical test print is required to confirm driver feed length and hardware margins.

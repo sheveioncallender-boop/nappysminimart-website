@@ -1,6 +1,6 @@
 {
     'name': 'Nappy’s Minimart — Website & Shop',
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.2',
     'summary': 'Community minimart website, live Odoo shop and red-and-gold branding',
     'category': 'Website/eCommerce',
     'author': 'Spxcorp Limited',

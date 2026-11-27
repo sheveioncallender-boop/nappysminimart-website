@@ -29,6 +29,93 @@
                     padding-bottom: 2rem;
                 }
             </style>
+            <style id="nappys-pos-receipt-58mm">
+                /* XP-58IIL: 58 mm roll, 48 mm printable area. USB uses browser printing. */
+                body .pos-receipt {
+                    width: 48mm !important;
+                    max-width: 48mm !important;
+                    box-sizing: border-box;
+                    padding: 0 !important;
+                    margin: 0 auto;
+                    font-family: Arial, sans-serif;
+                    font-size: 12px !important;
+                    line-height: 1.25;
+                    color: #000;
+                    background: #fff;
+                }
+                body .pos-receipt .pos-receipt-logo {
+                    display: block !important;
+                    width: 60% !important;
+                    max-width: 100%;
+                    height: auto !important;
+                    margin: 0 auto .5em !important;
+                    object-fit: contain;
+                }
+                body .pos-receipt .pos-receipt-qr,
+                body .pos-receipt #posqrcode { display: none !important; }
+                body .pos-receipt .orderline { padding: .4em 0 !important; }
+                body .pos-receipt .orderline .product-name {
+                    white-space: normal !important;
+                    overflow: visible !important;
+                    text-overflow: clip !important;
+                    min-width: 0;
+                    align-items: flex-start !important;
+                }
+                body .pos-receipt .product-name .text-wrap {
+                    overflow-wrap: anywhere;
+                    min-width: 0;
+                }
+                body .pos-receipt .qty { min-width: 1.5em; flex-shrink: 0; }
+                body .pos-receipt .product-price { flex-shrink: 0; white-space: nowrap; }
+                body .pos-receipt .info-list {
+                    margin-left: 1.5em !important;
+                    padding-left: 0;
+                    font-size: .85em !important;
+                }
+                body .pos-receipt .receipt-total {
+                    border-top: 1px dashed #000;
+                    margin-top: .5em;
+                    padding-top: .5em;
+                    font-size: 1.15em;
+                }
+                body .pos-receipt .pos-receipt-amount,
+                body .pos-receipt .paymentlines {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: .5em;
+                }
+                body .pos-receipt .pos-receipt-right-align { white-space: nowrap; }
+                body .pos-receipt .pt-3 { padding-top: .6em !important; }
+                body .pos-receipt > .d-flex.gap-2 {
+                    flex-direction: column;
+                    gap: .15em !important;
+                }
+                body .pos-receipt > .d-flex.gap-2 > .w-50 {
+                    width: 100% !important;
+                    text-align: center !important;
+                    font-size: .85em !important;
+                }
+                body .pos-receipt pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+                @page { size: auto; margin: 0; padding: 0; }
+                @media print {
+                    html, body { margin: 0 !important; padding: 0 !important; }
+                    body .render-container {
+                        top: 0 !important;
+                        left: 0 !important;
+                        width: 48mm !important;
+                        padding: 0 !important;
+                    }
+                    body .render-container .pos-receipt {
+                        width: 48mm !important;
+                        max-width: 48mm !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        font-size: 12px !important;
+                        overflow: visible !important;
+                        contain: none !important;
+                    }
+                }
+            </style>
         </xpath>
     </template>
 </odoo>
