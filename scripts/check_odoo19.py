@@ -15,7 +15,7 @@ from odoo.addons.base.models import ir_ui_view  # registers Odoo XPath functions
 
 root = Path(__file__).resolve().parents[1]
 modules = [source / 'addons' / name for name in
-           ['web', 'portal', 'website', 'website_sale', 'base_setup', 'product']]
+           ['web', 'portal', 'website', 'website_sale', 'base_setup', 'product', 'point_of_sale']]
 modules += [source / 'odoo/addons/base', root / 'nappys_website']
 views = {}
 for module in modules:

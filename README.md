@@ -69,3 +69,9 @@ Tests cover page routes, native cart/checkout, product publication, restricted c
 ## Credits
 
 Code: LGPL-3; see [LICENSE](LICENSE). Brand artwork belongs to the client and is not licensed as generic code. The code was adapted from Spxcorp Limited’s La Rosa website module. Photographs are subject to the Pexels licence and fonts to their included OFL licence; see [PHOTO_CREDITS.md](PHOTO_CREDITS.md).
+
+## POS product names — 19.0.1.0.1
+
+Product cards wrap to show the complete product name, including colour, size and pack details. This applies to image and image-free cards. The change uses the same Odoo 19 view inheritance as the La Rosa fix and is scoped to the product grid; receipt and order-line layouts retain their native styling.
+
+Pull this repository in CloudPepper, upgrade `nappys_website`, and reload the POS browser to receive the change. Point of Sale is now an explicit dependency.

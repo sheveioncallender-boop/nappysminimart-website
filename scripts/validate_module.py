@@ -8,7 +8,7 @@ root = Path(__file__).resolve().parents[1]
 module = root / 'nappys_website'
 manifest = ast.literal_eval((module / '__manifest__.py').read_text())
 assert manifest['version'].startswith('19.0.')
-assert manifest['depends'] == ['website_sale']
+assert manifest['depends'] == ['website_sale', 'point_of_sale']
 for path in module.rglob('*.py'):
     ast.parse(path.read_text(), filename=str(path))
 for path in module.rglob('*.xml'):

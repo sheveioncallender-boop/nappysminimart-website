@@ -1,15 +1,15 @@
 {
     'name': 'Nappy’s Minimart — Website & Shop',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'summary': 'Community minimart website, live Odoo shop and red-and-gold branding',
     'category': 'Website/eCommerce',
     'author': 'Spxcorp Limited',
     'website': 'https://spxcorp.net',
     'license': 'LGPL-3',
-    'depends': ['website_sale'],
+    'depends': ['website_sale', 'point_of_sale'],
     'data': [
         'views/settings.xml', 'views/layout.xml', 'views/commerce.xml',
-        'data/categories.xml', 'data/pages.xml',
+        'data/categories.xml', 'data/pages.xml', 'views/pos_display.xml',
     ],
     'assets': {
         'web._assets_primary_variables': [
